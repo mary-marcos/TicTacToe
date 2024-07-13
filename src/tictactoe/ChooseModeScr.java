@@ -38,6 +38,7 @@ public class ChooseModeScr extends BorderPane {
     private MultiPlayerModeSrc multiMode;
     private LeadBoardScr leadBoardScr;
     private SignInScr signInSrc;
+    private AboutScr aboutScr;
     private Stage stage;
     private Scene scene;
 
@@ -268,7 +269,13 @@ public class ChooseModeScr extends BorderPane {
 
     protected void about(ActionEvent actionEvent)
     {
-        
+        aboutScr = new AboutScr(stage);
+        stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(aboutScr,750,570);
+        scene.getStylesheets().add(getClass()
+                .getResource("/style/CSS_StyleSheet.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
     }
 
     protected void signOut(ActionEvent actionEvent)

@@ -1,5 +1,8 @@
 package tictactoe;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.geometry.Insets;
@@ -18,6 +21,7 @@ import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 public class SignInScr extends BorderPane {
 
@@ -200,7 +204,22 @@ public class SignInScr extends BorderPane {
 
     protected void signIn(ActionEvent actionEvent)
     {
-        chooseModeScreen(actionEvent);
+        try {
+            
+
+           if(DAL_1.isPlayerExist(textField.getText(),textField0.getText()))
+           {
+               DAL_1.updateStatus(textField.getText());
+               
+               chooseModeScreen(actionEvent);
+           }else{
+                 JOptionPane.showMessageDialog(null, "Please Check Username and Password ");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SignInScr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 
     protected void signUp(javafx.scene.input.MouseEvent mouseEvent)

@@ -24,6 +24,7 @@ public class TicTacToe extends Application {
         stage.setScene(scene);
         stage.setTitle("TicTacToe");
         stage.show();
+        new Clint();
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="servertic.CtrlServerScreenController">
+    <children>
+        <Button fx:id="startServerButton" text="Start Server"/>
+        <Button fx:id="stopServerButton" text="Stop Server"/>
+    </children>
+    <padding>
+        <Insets top="20" bottom="20" left="20" right="20"/>
+    </padding>
+</VBox>
